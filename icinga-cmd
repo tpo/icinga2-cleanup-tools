@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# usage: icinga-cmd "command"
+#
+# From http://docs.icinga.org/latest/en/extcommands2.html
+#
+# Adjust variables to fit your environment as necessary.
+
+now=`date +%s`
+commandfile='/var/run/icinga2/cmd/icinga2.cmd'
+
+printf "[%u] $1\n" $now > $commandfile

@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e # exit immediately on error
+
+su -c "dropdb icinga" -s /bin/sh - postgres
+rm -R \
+  /var/cache/icinga/* \
+  /var/cache/icinga2/* \
+  /var/cache/icinga-web/Squished/* \
+  /var/cache/icinga-web/config/* \
+  /var/cache/icinga-web/reporting/* \
+  /var/cache/icinga-web/tmp/* \
+  /var/lib/icinga2/icinga2.state \
+  /var/lib/icinga2/icinga2.state.bak \
+  /var/lib/icinga2/api/log/* \
+  /var/lib/icinga2/api/repository/* \
+  /var/lib/icinga2/api/zones/* \
+  /var/lib/icinga/rw/* \
+  /var/lib/icinga/spool/checkresults/* \
+  /var/spool/icinga2/perfdata/* \
+  /var/spool/icinga2/tmp/*
+
+echo "Now you need to recreate the icinga DB."
+echo "And if you have icinga-web running, you need to"
+echo "grant permissions to it to access the icinga DB."

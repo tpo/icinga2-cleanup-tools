@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e # exit immediately on error
+
+base=/root/icinga-state-backup
+mkdir $base 2>/dev/null || true
+t=`mktemp -d --tmpdir=$base XXXXXX`
+echo backup under $t
+
+rsync -avR \
+  /var/cache/icinga \
+  /var/cache/icinga2 \
+  /var/cache/icinga-web \
+  /var/cache/icinga-web/reporting \
+  /var/cache/icinga-web/tmp \
+  /var/lib/icinga \
+  /var/lib/icinga2 \
+  /var/lib/icinga2/api \
+  /var/lib/icinga2/api/log \
+  /var/lib/icinga2/api/repository \
+  /var/lib/icinga2/api/zones \
+  /var/lib/icinga/rw \
+  /var/lib/icinga/spool \
+  /var/lib/icinga/spool/checkresults \
+  /var/spool/icinga2 \
+  /var/spool/icinga2/perfdata \
+  /var/spool/icinga2/tmp \
+  $t
