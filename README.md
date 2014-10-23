@@ -2,7 +2,7 @@ icinga2-cleanup-tools
 =====================
 
 If you make a mess with your icinga2 installation
-and you want to clean up icingas state, then
+and you want to clean up icinga's state, then
 what you can do is to remove the various state files
 and drop the DB, and recreate it after.
 
@@ -15,7 +15,7 @@ want to delete as well.
 
 These tools are *HACKS*! They
 
-    # rm /some/path/\*
+    # rm /some/path/*
     # dropdb icinga
 
 stuff, so you better be sure you really want to loose
@@ -39,7 +39,7 @@ Send commands to icinga. I've used it like this:
 
 #### make-icinga-state-backup
 
-Backups the icinga state but *NOT* the DB. Adapt to
+Backs up the icinga state but *NOT* the DB. Adapt to
 your needs!
 
 #### remove-icinga-state
@@ -48,6 +48,7 @@ Removes icinga state and *DROPS* the DB. *You need
 to adapt this to your needs!*
 
 ### LICENSE
+Public Domain - use as you see fit
 
 ### Author and Contact
 Tomas Pospise <tpo_deb@sourcepole.ch>
