@@ -26,8 +26,8 @@ You should *NOT* use them blindly! Have a look at them
 before using them and adapt them first to your own
 setup and paths.
 
-They have been tested on Debian wheezy with the debmon
-repository.
+They have been tested on Debian wheezy with icinga2.1
+from the debmon repository.
 
 ### Tools description
 
